@@ -2,8 +2,26 @@ body {
     font-family: 'Hind', sans-serif;
 }
 
+a,
+.page-link,
+.crikey,
 .nav-link {
-    color: #333;
+    color: #FA0C58;
+}
+
+a:hover,
+.page-link:hover,
+.crikey:hover,
+.nav-link:hover {
+    color: #7A062B;
+}
+
+.nav {
+    margin-left: 1rem;
+}
+
+.nav-link {
+    padding: .5rem .75rem;
 }
 
 .custom-fullscreen-modal .modal-dialog {
@@ -15,12 +33,7 @@ body {
 }
 
 .bg-primary {
-    background-color: #666 !important;
-}
-
-.page-link,
-.page-link:hover {
-    color: #333;
+    background-color: #FA4468 !important;
 }
 
 .page-item.disabled .page-link {
@@ -61,4 +74,15 @@ body {
 
 .image-modal-body.landscape {
     padding-top: calc(min(66.666666666666%, 85vh));
+}
+
+.footer {
+    text-align: center;
+}
+
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
 }
