@@ -1,0 +1,12 @@
+<div class="col-sm-6 col-lg-4 mb-4">
+    <div class="card {% if page.highlight %} bg-primary text-white{% endif %}{% if page.align == "right" %} text-end{% endif %}{% if page.align == "center" %} text-center{% endif %}{% if page.space %} p-3{% endif %}">
+        <figure class="p-3 mb-0">
+            <blockquote class="blockquote">
+                <p>{{ page.quote }}</p>
+            </blockquote>
+            <figcaption class="blockquote-footer mb-0 {% if page.highlight %}text-white{% else %}text-muted{% endif %}">
+                {% if page.author %}{{ page.author }}{% endif %}{% if page.author and page.source %}, {% endif %}{% if page.source %}<cite title="{{ page.source }}">{{ page.source }}</cite>{% endif %}
+            </figcaption>
+        </figure>
+    </div>
+</div>

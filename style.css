@@ -1,0 +1,36 @@
+body {
+    font-family: 'Hind', sans-serif;
+}
+
+.nav-link {
+    color: #333;
+}
+
+.custom-fullscreen-modal .modal-dialog {
+    height: calc(100% - 5rem);
+}
+
+.custom-fullscreen-modal .modal-dialog .modal-content {
+    height: 100%;
+}
+
+.card-popup {
+    cursor: pointer;
+}
+
+.bg-primary {
+    background-color: #666 !important;
+}
+
+.page-link,
+.page-link:hover {
+    color: #333;
+}
+
+.page-item.disabled .page-link {
+    color: #ccc;
+}
+
+.page-item.disabled .page-link.const {
+    color: #000;
+}

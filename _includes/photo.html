@@ -1,0 +1,28 @@
+<div class="col-sm-6 col-lg-4 mb-4" data-bs-toggle="modal" data-bs-target="#photoModal{{ page.slug }}">
+    {% if page.modal %}
+    <div class="modal fade custom-fullscreen-modal" id="photoModal{{ page.slug }}" tabindex="-1" aria-labelledby="photoModal{{ page.slug }}Label"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title h6" id="photoModal{{ page.slug }}Label">{{ page.title }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="background-image: url('{{ page.full }}'); background-size: contain; background-repeat: no-repeat; background-position: center center;"></div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="card{% if page.modal %} card-popup{% endif %}">
+        <div class="card-img-top" width="100%" style="background-image: url('{{ page.thumb }}'); padding-top: 200px; background-size: contain; background-repeat: no-repeat; background-position: center center;"></div>
+
+        {% if page.body %}
+        <div class="card-body">
+            <h5 class="card-title">{{ page.title }}</h5>
+            {% if page.subtitle %}<p class="card-text">{{ page.subtitle }}</p>{% endif %}
+            {% if page.byline %}<p class="card-text"><small class="text-muted">{{ page.byline }}</small></p>{% endif %}
+        </div>
+        {% endif %}
+    </div>
+</div>
