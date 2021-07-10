@@ -8,14 +8,14 @@
                     <h6 class="modal-title h6" id="photoModal{{ page.slug }}Label">{{ page.title }}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" style="background-image: url('{{ page.full }}'); background-size: contain; background-repeat: no-repeat; background-position: center center;"></div>
+                <div class="modal-body image-modal-body{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{{ page.full }}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
             </div>
         </div>
     </div>
     {% endif %}
 
     <div class="card{% if page.modal %} card-popup{% endif %}">
-        <div class="card-img-top" width="100%" style="background-image: url('{{ page.thumb }}'); padding-top: 200px; background-size: contain; background-repeat: no-repeat; background-position: center center;"></div>
+        <div class="card-img-top{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{{ page.thumb }}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
 
         {% if page.body %}
         <div class="card-body">

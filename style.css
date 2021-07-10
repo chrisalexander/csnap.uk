@@ -10,10 +10,6 @@ body {
     height: calc(100% - 5rem);
 }
 
-.custom-fullscreen-modal .modal-dialog .modal-content {
-    height: 100%;
-}
-
 .card-popup {
     cursor: pointer;
 }
@@ -33,4 +29,36 @@ body {
 
 .page-item.disabled .page-link.const {
     color: #000;
+}
+
+.image-modal-body,
+.card-img-top {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.card-img-top {
+    width: 100%;
+    padding-top: 100%;
+}
+
+.card-img-top.portrait {
+    padding-top: 150%;
+}
+
+.card-img-top.landscape {
+    padding-top: 66.666666666666%;
+}
+
+.image-modal-body {
+    padding: calc(min(100%, 85vh)) 0 0 0;
+}
+
+.image-modal-body.portrait {
+    padding-top: calc(min(150%, 85vh));
+}
+
+.image-modal-body.landscape {
+    padding-top: calc(min(66.666666666666%, 85vh));
 }
