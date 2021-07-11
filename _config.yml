@@ -1,4 +1,4 @@
-paginate: 100
+paginate: 50
 paginate_path: "/pg/:num/"
 markdown: kramdown
 exclude: [vendor, Gemfile, LICENSE, README.md]
