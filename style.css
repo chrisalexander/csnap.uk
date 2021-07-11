@@ -51,6 +51,14 @@ a:hover,
     background-position: center center;
 }
 
+@media (max-width: 1200px) {
+    .image-modal-body {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+
 .card-img-top {
     width: 100%;
     padding-top: 100%;
@@ -65,7 +73,7 @@ a:hover,
 }
 
 .image-modal-body {
-    padding: calc(min(100%, 85vh)) 0 0 0;
+    padding-top: calc(min(100%, 85vh));
 }
 
 .image-modal-body.portrait {
