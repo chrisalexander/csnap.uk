@@ -16,10 +16,6 @@ a:hover,
     color: #7A062B;
 }
 
-.nav {
-    margin-left: 1rem;
-}
-
 .nav-link {
     padding: .5rem .75rem;
 }
@@ -93,4 +89,9 @@ img.center {
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
+}
+
+.modal-footer {
+    justify-content: space-between;
+    padding: .25rem .5rem;
 }
