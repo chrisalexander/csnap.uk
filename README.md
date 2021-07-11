@@ -15,7 +15,7 @@ If you'd like a similar site then please kindly ask :-)
     modal: true
     thumb: http://placekitten.com/500/500
     full: http://placekitten.com/2000/2000
-    size: medium
+    size: small
     ar: square
     body: true
     title: "Photo 1"
@@ -31,11 +31,10 @@ If you'd like a similar site then please kindly ask :-)
   - Thumbnail image URI
 - `full: <uri>`
   - Modal image URI, not used if `modal` is false
-- `size: small | medium | large | huge | full`
+- `size: small | large | full`
   - Size of the image rendered in the responsive layout
   - "full" is always full page width - lots of pixels recommended
   - Other sizes arrange themselves in order
-  - Smaller images may appear larger on smaller devices
 - `ar: square | portrait | landscape | custom`
   - Specify the aspect ratio of the image
   - `portrait` and `landscape` assume a **3:2** aspect ratio
@@ -63,7 +62,7 @@ If you'd like a similar site then please kindly ask :-)
     ---
     layout: card
     align: left
-    size: medium
+    size: small
     title: "Card 1"
     subtitle: "Subtitle"
     byline: "Byline"
@@ -74,11 +73,10 @@ If you'd like a similar site then please kindly ask :-)
 - `align: left | center | right`
   - Optional
   - Determines how text is aligned in the card
-- `size: small | medium | large | huge | full`
+- `size: small | large | full`
   - Size of the image rendered in the responsive layout
   - "full" is always full page width - lots of pixels recommended
   - Other sizes arrange themselves in order
-  - Smaller images may appear larger on smaller devices
 - `title: <text>`
   - Required
   - Title of the card
@@ -95,7 +93,7 @@ If you'd like a similar site then please kindly ask :-)
     layout: quote
     highlight: false
     align: center
-    size: medium
+    size: small
     space: true
     quote: "All men must die, but we are not men."
     author: "Daenerys Targaryen"
@@ -109,11 +107,10 @@ If you'd like a similar site then please kindly ask :-)
 - `align: left | center | right`
   - Optional
   - Determines how text is aligned in the card
-- `size: small | medium | large | huge | full`
+- `size: small | large | full`
   - Size of the image rendered in the responsive layout
   - "full" is always full page width - lots of pixels recommended
   - Other sizes arrange themselves in order
-  - Smaller images may appear larger on smaller devices
 - `space: true | false`
   - Whether to add padding to the quote within the card
 - `quote: <text>`

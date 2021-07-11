@@ -1,14 +1,14 @@
-<div class="pb-3 col-12{% if page.size == "small" %} col-sm-4 col-xl-3{% endif %}{% if page.size == "medium" %} col-sm-4 col-lg-4{%endif %}{% if page.size == "large" %} col-sm-8 col-xl-6{% endif %}{% if page.size == "huge" %} col-xl-9{% endif %}" data-bs-toggle="modal" data-bs-target="#photoModal{{ page.slug }}">
+<div class="pb-3 col-12{% if page.size == "small" %} col-sm-4{% endif %}{% if page.size == "large" %} col-sm-8{% endif %}" data-bs-toggle="modal" data-bs-target="#photoModal{{ page.slug }}">
     {% if page.modal %}
     <div class="modal fade custom-fullscreen-modal" id="photoModal{{ page.slug }}" tabindex="-1" aria-labelledby="photoModal{{ page.slug }}Label"
         aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-body image-modal-body{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{{ page.full }}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
+                <div class="modal-footer">
                     <h6 class="modal-title h6" id="photoModal{{ page.slug }}Label">{{ page.title }}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body image-modal-body{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{{ page.full }}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
             </div>
         </div>
     </div>
