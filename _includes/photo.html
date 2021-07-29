@@ -1,5 +1,15 @@
-<div class="pb-3 col-12{% if page.size == "small" %} col-sm-4{% endif %}{% if page.size == "large" %} col-sm-8{% endif %}" data-bs-toggle="modal" data-bs-target="#photoModal{{ page.slug }}">
-    {% if page.modal %}
+{% if include.full %}
+<div class="row">
+{% if page.ar == "portrait" %}
+    <div class="col-lg-1 col-xl-2 col-xxl-3"></div>
+{% endif %}
+{% if page.ar == "square" %}
+    <div class="col-xl-1 col-xxl-2"></div>
+{% endif %}
+{% endif %}
+
+<div class="pb-3 col-12{% if include.full %}{% if page.ar == "portrait" %} col-lg-10 col-xl-8 col-xxl-6{% endif %}{% if page.ar == "square" %} col-xl-10 col-xxl-8{% endif%}{% else %}{% if page.size == "small" %} col-sm-4{% endif %}{% if page.size == "large" %} col-sm-8{% endif %}{% endif %}" data-bs-toggle="modal" data-bs-target="#photoModal{{ page.slug }}">
+    {% unless include.full %}{% if page.modal %}
     <div class="modal fade custom-fullscreen-modal" id="photoModal{{ page.slug }}" tabindex="-1" aria-labelledby="photoModal{{ page.slug }}Label"
         aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
@@ -7,23 +17,39 @@
                 <div class="modal-body image-modal-body{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{{ page.full }}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
                 <div class="modal-footer">
                     <h6 class="modal-title h6" id="photoModal{{ page.slug }}Label">{{ page.title }}</h6>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <a href="{{ page.url }}" style="margin-right: auto">View photo details</a>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
             </div>
         </div>
     </div>
-    {% endif %}
+    {% endif %}{% endunless %}
 
-    <div class="card{% if page.modal %} card-popup{% endif %}">
-        <div class="card-img-top{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{{ page.thumb }}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
+    <div class="card{% unless include.full %}{% if page.modal %} card-popup{% endif %}{% endunless %}">
+        {% if include.full %}
+        <div class="card-body">
+            <h5 class="card-title">{{ page.title }}</h5>
+        </div>
+        {% endif %}
+
+        <div class="card-img-top{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{% if include.full %}{{ page.full }}{% else %}{{ page.thumb }}{% endif %}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
 
         {% if page.body %}
         <div class="card-body">
-            <h5 class="card-title">{{ page.title }}</h5>
+            {% unless include.full %}<h5 class="card-title">{{ page.title }}</h5>{% endunless %}
             {% if page.subtitle %}<p class="card-text">{{ page.subtitle }}</p>{% endif %}
             {% if page.byline %}<p class="card-text"><small class="text-muted">{{ page.byline }}</small></p>{% endif %}
-        </div>
         </div>
         {% endif %}
     </div>
 </div>
+
+{% if include.full %}
+{% if page.ar == "portrait" %}
+    <div class="col-lg-1 col-xl-2 col-xxl-3"></div>
+{% endif %}
+{% if page.ar == "square" %}
+    <div class="col-xl-1 col-xxl-2"></div>
+{% endif %}
+</div>
+{% endif %}
