@@ -32,7 +32,7 @@
         </div>
         {% endif %}
 
-        <div class="card-img-top{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{% if include.full %}{{ page.full }}{% else %}{{ page.thumb }}{% endif %}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
+        <div class="card-img-top{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{% if include.full or page.size == "full" %}{{ page.full }}{% else %}{{ page.thumb }}{% endif %}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
 
         {% if page.body %}
         <div class="card-body">
