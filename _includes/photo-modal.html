@@ -1,0 +1,39 @@
+{% if page.modal %}
+    <div class="modal fade custom-fullscreen-modal" id="photoModal{{ page.slug }}" tabindex="-1" aria-labelledby="photoModal{{ page.slug }}Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                {% if page.thumb.first %}
+                <div id="carouselModal{{ page.slug }}" class="carousel slide modal-body" data-bs-ride="carousel" data-bs-interval="false">
+                    <div class="carousel-indicators">
+                        {% assign first = true %}
+                        {% for img in page.thumb %}
+                            <button type="button" data-bs-target="#carouselMain{{ page.slug }}" data-bs-slide-to="{{ forloop.index | minus: 1 }}"{% if first %} class="active"{% assign first = false %}{% endif %}></button>
+                        {% endfor %}
+                    </div>
+                    <div class="carousel-inner">
+                        {% assign first = true %}
+                        {% for img in page.full %}
+                            <div class="carousel-item image-modal-body{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}{% if first %} active{% assign first = false %}{% endif %}" style="background-image: url('{{ img }}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselModal{{ page.slug }}" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselModal{{ page.slug }}" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                {% else %}
+                <div class="modal-body image-modal-body{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{{ page.full }}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
+                {% endif %}
+                <div class="modal-footer">
+                    <h6 class="modal-title h6" id="photoModal{{ page.slug }}Label">{{ page.title }}</h6>
+                    <a href="{{ page.url }}" style="margin-right: auto">View photo details</a>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}

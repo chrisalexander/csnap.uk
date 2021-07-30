@@ -68,6 +68,22 @@ a:hover,
     padding-top: 66.666666666666%;
 }
 
+.carousel {
+    height: 100%;
+}
+
+.carousel.portrait {
+    height: 150%;
+}
+
+.carousel.landscape {
+    height: 66.666666666666%;
+}
+
+.carousel.modal-body {
+    padding: 0;
+}
+
 .image-modal-body {
     padding-top: calc(min(100%, 85vh));
 }
