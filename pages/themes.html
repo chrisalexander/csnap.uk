@@ -20,7 +20,9 @@ permalink: '/themes'
             {% else %}
                 {% assign img = page.thumb %}
             {% endif %}
-            <div class="card-img-top{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{{ img }}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
+            <a href="{{ theme.url }}">
+                <div class="card-img-top{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{{ img }}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
+            </a>
         </div>
     </div>
     {% endfor %}
