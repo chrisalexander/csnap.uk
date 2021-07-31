@@ -7,5 +7,5 @@ size: small
 ar: landscape
 body: false
 title: "Spectator"
-tags: street portrait
+tags: street portraits
 ---
