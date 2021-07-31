@@ -1,4 +1,3 @@
 ---
-name: Street
-full: Street photography
+title: Street photography
 ---

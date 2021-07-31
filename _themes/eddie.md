@@ -1,4 +1,4 @@
 ---
-name: Eddie
-description: Photos of our greyhound, Eddie
+title: Eddie
+byline: Photos of our greyhound, Eddie
 ---

@@ -1,3 +1,3 @@
 ---
-name: Architecture
+title: Architecture
 ---

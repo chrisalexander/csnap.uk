@@ -1,3 +1,3 @@
 ---
-name: Motorsport
+title: Motorsport
 ---

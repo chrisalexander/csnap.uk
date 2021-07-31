@@ -1,3 +1,3 @@
 ---
-name: Portraits
+title: Portraits
 ---
