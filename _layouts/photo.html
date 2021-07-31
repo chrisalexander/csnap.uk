@@ -3,3 +3,20 @@ layout: base
 ---
 
 {% include photo.html full=true %}
+
+<div class="row">
+    <div class="col-lg-1 col-xl-2 col-xxl-3"></div>
+    <div class="pb-3 col-12 col-lg-10 col-xl-8 col-xxl-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Themes that <em>{{ page.title }}</em> appears in</h5>
+                {% assign themeCollection = site.collections | where: "label", "themes" | first %}
+                {% for tag in page.tags %}
+                    {% assign theme = themeCollection.docs | where: "slug", tag | first %}
+                    <p><a href="{{ theme.url }}">{{ theme.title }}</a></p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1 col-xl-2 col-xxl-3"></div>
+</div>
