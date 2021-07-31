@@ -1,14 +1,14 @@
 {% if include.full %}
-<div class="row">
-{% if page.ar == "portrait" %}
-    <div class="col-lg-1 col-xl-2 col-xxl-3"></div>
-{% endif %}
-{% if page.ar == "square" %}
-    <div class="col-xl-1 col-xxl-2"></div>
-{% endif %}
+    <div class="row">
+    {% if page.ar == "portrait" %}
+        <div class="col-lg-1 col-xl-2 col-xxl-3"></div>
+    {% endif %}
+    {% if page.ar == "square" %}
+        <div class="col-xl-1 col-xxl-2"></div>
+    {% endif %}
 {% endif %}
 
-<div class="pb-3 col-12{% if include.full %}{% if page.ar == "portrait" %} col-lg-10 col-xl-8 col-xxl-6{% endif %}{% if page.ar == "square" %} col-xl-10 col-xxl-8{% endif%}{% else %}{% if page.size == "small" %} col-sm-4{% endif %}{% if page.size == "large" %} col-sm-8{% endif %}{% endif %}" data-bs-toggle="modal" data-bs-target="#photoModal{{ page.slug }}">
+<div class="pb-3 col-12{% if include.full %}{% if page.ar == "portrait" %} col-lg-10 col-xl-8 col-xxl-6{% endif %}{% if page.ar == "square" %} col-xl-10 col-xxl-8{% endif%}{% else %}{% if page.size == "small" or include.size == "small" %} col-sm-4{% else %}{% if page.size == "large" %} col-sm-8{% endif %}{% endif %}{% endif %}" data-bs-toggle="modal" data-bs-target="#photoModal{{ page.slug }}">
     <div class="card{% unless include.full %}{% if page.modal %} card-popup{% endif %}{% endunless %}">
         {% if include.full %}
         <div class="card-body">
@@ -28,7 +28,11 @@
             <div class="carousel-inner">
                 {% assign first = true %}
                 {% if include.full or page.size == "full" %}
-                    {% assign imglist = page.full %}
+                    {% unless include.size == "small" %}
+                        {% assign imglist = page.full %}
+                    {% else %}
+                        {% assign imglist = page.thumb %}
+                    {% endunless %}
                 {% else %}
                     {% assign imglist = page.thumb %}
                 {% endif %}
@@ -54,7 +58,7 @@
             {% endif %}
         </div>
         {% else %}
-        <div class="card-img-top{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{% if include.full or page.size == "full" %}{{ page.full }}{% else %}{{ page.thumb }}{% endif %}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
+        <div class="card-img-top{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{% if include.full or page.size == "full" %}{% unless include.size == "small" %}{{ page.full }}{% else %}{{ page.thumb }}{% endunless %}{% else %}{{ page.thumb }}{% endif %}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
         {% endif %}
 
         {% if page.body %}
@@ -68,11 +72,11 @@
 </div>
 
 {% if include.full %}
-{% if page.ar == "portrait" %}
-    <div class="col-lg-1 col-xl-2 col-xxl-3"></div>
-{% endif %}
-{% if page.ar == "square" %}
-    <div class="col-xl-1 col-xxl-2"></div>
-{% endif %}
-</div>
+    {% if page.ar == "portrait" %}
+        <div class="col-lg-1 col-xl-2 col-xxl-3"></div>
+    {% endif %}
+    {% if page.ar == "square" %}
+        <div class="col-xl-1 col-xxl-2"></div>
+    {% endif %}
+    </div>
 {% endif %}

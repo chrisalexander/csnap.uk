@@ -1,0 +1,20 @@
+---
+layout: base
+---
+
+<div class="row" data-masonry='{"percentPosition": true }'>
+    {% include card.html %}
+    {% assign pages = site.tags[page.slug] | limit: 50 %}
+    {% for page in pages %}
+        {% if page.layout == "photo" %}
+            {% include photo.html size="small" %}
+        {% endif %}
+    {% endfor %}
+</div>
+
+<!-- Modals for images have to go outside the flow of the page -->
+{% for page in pages %}
+    {% if page.layout == "photo" %}
+        {% include photo-modal.html %}
+    {% endif %}
+{% endfor %}

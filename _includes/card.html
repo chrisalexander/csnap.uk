@@ -1,9 +1,9 @@
 <div class="pb-3 col-12{% if page.size == "small" %} col-sm-4{% endif %}{% if page.size == "large" %} col-sm-8{% endif %}">
-    <div class="card{% if page.align == "right" %} text-end{% endif %}{% if page.align == "center" %} text-center{% endif %}">
+    <div class="card{% if page.highlight %} bg-primary text-white{% endif %}{% if page.align == "right" %} text-end{% endif %}{% if page.align == "center" %} text-center{% endif %}">
         <div class="card-body">
             <h5 class="card-title">{{ page.title }}</h5>
             {% if page.subtitle %}<p class="card-text">{{ page.subtitle }}</p>{% endif %}
-            {% if page.byline %}<p class="card-text"><small class="text-muted">{{ page.byline }}</small></p>{% endif %}
+            {% if page.byline %}<p class="card-text"><small class="{% if page.highlight %}text-white{% else %}text-muted{% endif %}">{{ page.byline }}</small></p>{% endif %}
             {{ page.content }}
         </div>
     </div>

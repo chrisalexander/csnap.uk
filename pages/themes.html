@@ -1,0 +1,27 @@
+---
+layout: base
+title: Themes
+permalink: '/themes'
+---
+
+{% assign themeCollection = site.collections | where: "label", "themes" | first %}
+
+<div class="row" data-masonry='{"percentPosition": true }'>
+    {% for theme in themeCollection.docs %}
+    <div class="pb-2 col-12 col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text"><a href="{{ theme.url }}">{{ theme.title }}</a></p>
+            </div>
+
+            {% assign page = site.tags[theme.slug] | first %}
+            {% if page.thumb.first %}
+                {% assign img = page.thumb[0] %}
+            {% else %}
+                {% assign img = page.thumb %}
+            {% endif %}
+            <div class="card-img-top{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{{ img }}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
