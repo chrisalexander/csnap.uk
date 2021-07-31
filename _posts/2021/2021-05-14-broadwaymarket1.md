@@ -7,4 +7,5 @@ size: large
 ar: landscape
 body: false
 title: "Broadway Market"
+tags: street
 ---

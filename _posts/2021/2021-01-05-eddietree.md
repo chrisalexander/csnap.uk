@@ -7,4 +7,5 @@ size: small
 ar: portrait
 body: false
 title: "Eddie and the tree"
+tags: nature animals eddie
 ---

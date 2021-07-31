@@ -7,4 +7,5 @@ size: full
 ar: landscape
 body: false
 title: "Water Wheel"
+tags: man-made
 ---

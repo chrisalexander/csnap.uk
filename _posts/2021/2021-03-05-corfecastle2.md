@@ -7,4 +7,5 @@ size: large
 ar: landscape
 body: false
 title: "Corfe Castle"
+tags: man-made
 ---

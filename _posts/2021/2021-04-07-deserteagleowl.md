@@ -7,4 +7,5 @@ size: small
 ar: landscape
 body: false
 title: "Desert Eagle Owl"
+tags: animals
 ---

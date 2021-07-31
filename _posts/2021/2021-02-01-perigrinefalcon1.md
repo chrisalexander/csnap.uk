@@ -7,4 +7,5 @@ size: small
 ar: landscape
 body: false
 title: "Perigrine Falcon"
+tags: animals
 ---

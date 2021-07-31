@@ -7,4 +7,5 @@ size: small
 ar: landscape
 body: false
 title: "Boiling Egg"
+tags: textures architecture man-made
 ---

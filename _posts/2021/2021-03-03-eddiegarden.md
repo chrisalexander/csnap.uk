@@ -7,4 +7,5 @@ size: small
 ar: landscape
 body: false
 title: "Eddie in the garden"
+tags: animals eddie
 ---

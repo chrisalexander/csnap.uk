@@ -7,4 +7,5 @@ size: small
 ar: landscape
 body: false
 title: "Butterfly"
+tags: nature animals
 ---

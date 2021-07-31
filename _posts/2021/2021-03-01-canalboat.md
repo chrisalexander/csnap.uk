@@ -7,4 +7,5 @@ size: small
 ar: landscape
 body: false
 title: "Canal Boat"
+tags: man-made
 ---
