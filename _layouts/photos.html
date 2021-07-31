@@ -1,0 +1,28 @@
+---
+layout: base
+---
+
+<div class="row" data-masonry='{"percentPosition": true }'>
+    {% for page in paginator.posts %}
+        {% if page.layout == "quote" %}
+            {% include quote.html %}
+        {% endif %}
+        {% if page.layout == "card" %}
+            {% include card.html %}
+        {% endif %}
+        {% if page.layout == "photo" %}
+            {% include photo.html %}
+        {% endif %}
+    {% endfor %}
+</div>
+
+<div class="row">
+    {% include pagination.html %}
+</div>
+
+<!-- Modals for images have to go outside the flow of the page -->
+{% for page in paginator.posts %}
+    {% if page.layout == "photo" %}
+        {% include photo-modal.html %}
+    {% endif %}
+{% endfor %}
