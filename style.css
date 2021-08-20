@@ -111,3 +111,25 @@ img.center {
     justify-content: space-between;
     padding: .25rem .5rem;
 }
+
+@media (prefers-color-scheme: dark) {
+    body,
+    .card,
+    .modal-content {
+        background-color: #1A1804;
+        color: #E6F9FF;
+    }
+
+    .text-dark,
+    .btn-close {
+        color: #E6F9FF !important;
+    }
+
+    .border-bottom {
+        border-bottom-color: #E6F9FF;
+    }
+
+    .card {
+        border-color: #E6F9FF;
+    }
+}
