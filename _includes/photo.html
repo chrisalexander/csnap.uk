@@ -61,7 +61,7 @@
         <div class="card-img-top{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{% if include.full or page.size == "full" %}{% unless include.size == "small" %}{{ page.full }}{% else %}{{ page.thumb }}{% endunless %}{% else %}{{ page.thumb }}{% endif %}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
         {% endif %}
 
-        {% if page.body %}
+        {% if page.body or include.full %}
         <div class="card-body">
             {% unless include.full %}<h5 class="card-title">{{ page.title }}</h5>{% endunless %}
             {% if page.subtitle %}<p class="card-text">{{ page.subtitle }}</p>{% endif %}
