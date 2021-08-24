@@ -6,9 +6,15 @@
     {% if page.ar == "square" %}
         <div class="col-xl-1 col-xxl-2"></div>
     {% endif %}
+{% else %}
+    {% if page.break.before %}
+    </div>
+    <!-- MAJOR DODGE: Let's just randomly start a new section! -->
+    <div class="row" data-masonry='{"percentPosition": true }'>
+    {% endif %}
 {% endif %}
 
-<div class="pb-3 col-12{% if include.full %}{% if page.ar == "portrait" %} col-lg-10 col-xl-8 col-xxl-6{% endif %}{% if page.ar == "square" %} col-xl-10 col-xxl-8{% endif%}{% else %}{% if page.size == "small" or include.size == "small" %} col-sm-4{% else %}{% if page.size == "large" %} col-sm-8{% endif %}{% endif %}{% endif %}" data-bs-toggle="modal" data-bs-target="#photoModal{{ page.slug }}">
+<div class="pb-3 col-12{% if include.full %}{% if page.ar == "portrait" %} col-lg-10 col-xl-8 col-xxl-6{% endif %}{% if page.ar == "square" %} col-xl-10 col-xxl-8{% endif%}{% else %}{% if page.size == "small" or include.size == "small" %} col-sm-4{% else %}{% if page.size == "medium" or include.size == "medium" %} col-sm-6{% else %}{% if page.size == "large" or include.size == "large" %} col-sm-8{% endif %}{% endif %}{% endif %}{% endif %}" data-bs-toggle="modal" data-bs-target="#photoModal{{ page.slug }}">
     <div class="card{% unless include.full %}{% if page.modal %} card-popup{% endif %}{% endunless %}">
         {% if include.full %}
         <div class="card-body">
@@ -79,4 +85,10 @@
         <div class="col-xl-1 col-xxl-2"></div>
     {% endif %}
     </div>
+{% else %}
+    {% if page.break.after %}
+    </div>
+    <!-- MAJOR DODGE: Let's just randomly start a new section! -->
+    <div class="row" data-masonry='{"percentPosition": true }'>
+        {% endif %}
 {% endif %}
