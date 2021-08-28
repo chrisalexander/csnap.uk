@@ -48,7 +48,7 @@
                     {% assign mod4 = idx | modulo: 4 %}
                     {% assign offset = mod2 | times: mod4 | times: 1000 %}
                     <div class="carousel-item{% if first %} active{% assign first = false %}{% endif %}" data-bs-interval="{{ initialTime | plus: offset | round }}">
-                        <div class="card-img-top{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{{ img }}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
+                        <div class="bgloadfade card-img-top{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{{ img }}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
                     </div>
                 {% endfor %}
             </div>
@@ -64,7 +64,7 @@
             {% endif %}
         </div>
         {% else %}
-        <div class="card-img-top{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{% if include.full or page.size == "full" %}{% unless include.size == "small" %}{{ page.full }}{% else %}{{ page.thumb }}{% endunless %}{% else %}{{ page.thumb }}{% endif %}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
+        <div class="bgloadfade card-img-top{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{% if include.full or page.size == "full" %}{% unless include.size == "small" %}{{ page.full }}{% else %}{{ page.thumb }}{% endunless %}{% else %}{{ page.thumb }}{% endif %}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
         {% endif %}
 
         {% if page.body or include.full %}
