@@ -29,21 +29,7 @@ var images = {
             })(el, url);
             img.src = url;
         }
-    },
-
-    "imgFade": function () {
-        var imgs = document.getElementsByTagName("img");
-        for (var i = 0; i < imgs.length; i++) {
-            var img = imgs[i];
-            if (!img.complete) {
-                img.style.opacity = 0;
-                img.onload = function () {
-                    this.style.opacity = 1;
-                }
-            }
-        }
     }
 }
 
 images.bgImgFade();
-images.imgFade();
