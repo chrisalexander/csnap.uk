@@ -18,8 +18,8 @@ var images = {
         }, 1);
         
         var img = new Image();
-        img.onload = (function (el, url, fastTransition, slowTransition, startTransitionTimeout) {
-            return function () {
+        img.onload = ((el, url, fastTransition, slowTransition, startTransitionTimeout) => {
+            return () => {
                 clearTimeout(startTransitionTimeout);
                 if (!started) { return; }
 
@@ -30,18 +30,33 @@ var images = {
                     el.className = el.className.replace(" loading", "");
                     el.style.opacity = 1;
                 }, fastTransition * 1.1);
-            }
+            };
         })(el, url, this.fastTransition, this.slowTransition, startTransitionTimeout);
         img.src = url;
     },
 
-    "bgImgFade": function () {
+    "bgImgFade": function() {
         var els = document.getElementsByClassName("bgloadfade");
         for (var i = 0; i < els.length; i++) {
             var el = els[i];
             this.handleImgFade(el);
         }
+    },
+
+    "bgImgModals": function() {
+        var els = document.getElementsByClassName("bgmodalfade");
+        for (var i = 0; i < els.length; i++) {
+            var el = els[i];
+            el.addEventListener('show.bs.modal', (e) => {
+                var subEls = e.target.getElementsByClassName("bgmodalfadetgt");
+                for (var j = 0; j < subEls.length; j++) {
+                    var subEl = subEls[j];
+                    this.handleImgFade(subEl);
+                }
+            });
+        }
     }
 }
 
 images.bgImgFade();
+images.bgImgModals();

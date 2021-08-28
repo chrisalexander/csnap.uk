@@ -112,7 +112,8 @@ img.center {
     padding: .25rem .5rem;
 }
 
-.bgloadfade.loading {
+.bgloadfade.loading,
+.bgmodalfadetgt.loading {
     background-image: url('/spin.svg') !important;
     background-repeat: no-repeat;
     background-position: center center;

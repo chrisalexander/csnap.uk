@@ -1,5 +1,5 @@
 {% if page.modal %}
-    <div class="modal fade custom-fullscreen-modal" id="photoModal{{ page.slug }}" tabindex="-1" aria-labelledby="photoModal{{ page.slug }}Label" aria-hidden="true">
+    <div class="modal fade bgmodalfade custom-fullscreen-modal" id="photoModal{{ page.slug }}" tabindex="-1" aria-labelledby="photoModal{{ page.slug }}Label" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
             <div class="modal-content">
                 {% if page.thumb.first %}
@@ -13,7 +13,7 @@
                     <div class="carousel-inner">
                         {% assign first = true %}
                         {% for img in page.full %}
-                            <div class="carousel-item image-modal-body{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}{% if first %} active{% assign first = false %}{% endif %}" style="background-image: url('{{ img }}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
+                            <div class="carousel-item bgmodalfadetgt image-modal-body{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}{% if first %} active{% assign first = false %}{% endif %}" style="background-image: url('{{ img }}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
                         {% endfor %}
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselModal{{ page.slug }}" data-bs-slide="prev">
@@ -26,7 +26,7 @@
                     </button>
                 </div>
                 {% else %}
-                <div class="modal-body image-modal-body{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{{ page.full }}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
+                <div class="modal-body bgmodalfadetgt image-modal-body{% if page.ar == "portrait" %} portrait{% endif %}{% if page.ar == "landscape" %} landscape{% endif %}" style="background-image: url('{{ page.full }}');{% if page.ar == "custom" %}padding-top: {{ page.ar-custom }}%;{% endif %}"></div>
                 {% endif %}
                 <div class="modal-footer">
                     <h6 class="modal-title h6" id="photoModal{{ page.slug }}Label">{{ page.title }}</h6>
