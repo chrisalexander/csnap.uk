@@ -1,5 +1,6 @@
 body {
     font-family: 'Hind', sans-serif;
+    background-color: #f7f7f7;
 }
 
 a,
@@ -124,7 +125,7 @@ img.center {
     body,
     .card,
     .modal-content {
-        background-color: #1A1804;
+        background-color: #0F0E02;
         color: #E6F9FF;
     }
 
